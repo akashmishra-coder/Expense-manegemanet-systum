@@ -1,4 +1,5 @@
 import React, { createContext, useState, useEffect, useMemo, useContext } from "react";
+import {data} from "./Data";
 
 // 1. Create the Context
 const TransactionContext = createContext();
@@ -9,25 +10,10 @@ export const useTransactions = () => useContext(TransactionContext);
 // 3. Create the Provider Component
 export const TransactionProvider = ({ children }) => {
   // --- STATE ---
-  const [transactions, setTransactions] = useState(() => {
-    try {
-      const stored = localStorage.getItem("transactions");
-      return stored ? JSON.parse(stored) : [];
-    } catch {
-      return [];
-    }
-  });
+  const [transactions, setTransactions] = useState(data.transactions);
 
   // --- VENDORS STATE (New) ---
-  const [vendors, setVendors] = useState(() => {
-    try {
-      const stored = localStorage.getItem("vendors");
-      return stored ? JSON.parse(stored) : [
-        { id: 1, name: "City Power Co.", type: "expense", category: "Electricity", email: "billing@citypower.com", phone: "555-0101", status: "Active" },
-        { id: 2, name: "Fresh Foods Wholesale", type: "expense", category: "Food Supplies", email: "orders@freshfoods.com", phone: "555-0202", status: "Active" },
-      ];
-    } catch { return []; }
-  });
+  const [vendors, setVendors] = useState(data.vendors);
 
   const [categories, setCategories] = useState({
     income: ["Rent", "Deposit", "Food Charges", "Laundry", "Other"],
