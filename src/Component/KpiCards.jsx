@@ -1,23 +1,22 @@
+import "./KpiCard.css";
 import { IoWalletOutline } from "react-icons/io5";
 
 const KpiCards = ({ item }) => {
-  const { name, value, bgColor } = item;
+  const { name, value } = item;
 
   return (
-    <div
-      style={{
-        color: "white",
-        borderRadius: "12px",
-        background: bgColor,
-        padding: "15px",
-        width: "160px",
-        textAlign: "center",
-        boxShadow: "0 4px 10px rgba(0,0,0,0.1)",
-      }}
-    >
-      
-      <h4 style={{ marginBottom: "10px", fontSize:"20px" }}><IoWalletOutline /> {name}</h4>
-      <h2 style={{ fontSize: "22px" }}>₹{value}</h2>
+    <div className="kpi-card">
+      <div className="kpi-header">
+        <span className="kpi-title">{name}</span>
+        <IoWalletOutline className="kpi-icon" />
+      </div>
+
+      <h2 className="kpi-value">₹ {value}</h2>
+
+      <div className="kpi-footer">
+        <span className="positive">↑ 2.5%</span>
+        <span className="last-month">Last month ₹21,000</span>
+      </div>
     </div>
   );
 };

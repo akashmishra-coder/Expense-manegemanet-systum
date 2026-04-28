@@ -1,0 +1,104 @@
+.app-container {
+  background: #f6f9fc;
+  min-height: 100vh;
+  padding: 30px 60px;
+}
+
+.title-first {
+  margin-top: 30px;
+}
+
+.title-second {
+  margin-bottom: 30px;
+  color: rgb(115, 114, 114);
+  font-size: medium;
+  font-weight: 400;
+}
+
+/* 🔥 Responsive Grid */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.addExpense {
+  font-size: larger;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px 0 0;
+  border: 1px solid rgb(224, 221, 221);
+  background: #feffff;
+  cursor: pointer;
+  box-shadow: 3px 6px 10px 1px #e7e7e7;
+}
+
+.addCategoryBtn:active{
+   transform: scale(96%);
+  transition: all 100ms ease-in-out;
+}
+
+.action-bar {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.addCategoryBtn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: large;
+}
+
+.addCategoryBtn:hover {
+  background: #1d4ed8;
+}
+
+/* Smaller modal */
+.modal.small {
+    background: white;
+    width: 350px;
+    padding: 15px 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 15px;
+
+}
+
+/* Better spacing */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.modal-actions{
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+@media screen and (max-width : 724px ) {
+  .app-container{
+    padding: 30px;
+  }
+  .title-first{
+    margin-top: 0;
+  }
+ 
+}
+@media screen and (max-width : 500px ) {
+    .addCategoryBtn{
+    font-size: medium;
+    }
+    .app-container{
+      padding:  30px 15px;
+    }
+}

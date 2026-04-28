@@ -1,0 +1,144 @@
+
+
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  border: 1px solid #eaeaea;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 24px;
+}
+
+/* =========================================
+   Payments History Styles
+   ========================================= */
+.payments-card {
+  flex: 1;
+  min-width: 320px;
+}
+
+.payments-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.payments-header .card-title {
+  margin-bottom: 0;
+}
+
+.see-more {
+  color: #4f46e5;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.see-more:hover {
+  text-decoration: underline;
+}
+
+.payments-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.payment-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.payment-item:last-child {
+  border-bottom: none;
+}
+
+.payment-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.payment-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.payment-date {
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+.payment-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.payment-amount {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.status-badge {
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 4px 12px;
+  border-radius: 12px;
+  color: white;
+  min-width: 60px;
+  text-align: center;
+}
+
+.status-paid {
+  background-color: #10b981; /* Green */
+}
+
+.status-due {
+  background-color: #f59e0b; /* Orange */
+}
+
+.status-upcoming {
+  background-color: #1e76f2; /* Blue */
+}
+
+/* =========================================
+   Responsive Design (Mobile View)
+   ========================================= */
+@media screen and (max-width: 1024px) {
+  .dashboard-container {
+    flex-direction: column;
+  }
+
+  .expenses-card, .payments-card {
+    width: 100%;
+    flex: none;
+  }
+  
+  .chart-bars {
+    gap: 4px; /* Slightly tighter bars on smaller screens */
+  }
+
+  .x-axis-label {
+    /* Hide some labels on smaller screens or rotate them to prevent overlapping */
+    font-size: 0.65rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  /* Hide every other x-axis label on very small screens to avoid clutter */
+  .bar-column:nth-child(even) .x-axis-label {
+    display: none; 
+  }
+}
